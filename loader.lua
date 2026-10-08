@@ -1,10 +1,10 @@
 local GITHUB_BASE = "https://raw.githubusercontent.com/mdreajrb-ship-it/opshub/refs/heads/main/"
 
--- PlaceIds
-local MAIN_PLACE_ID  = 126884695634066   -- العالم العادي
-local TRADE_PLACE_ID = 129954712878723   -- عالم التريد
 
--- اسم الملف اللي يشتغل في كل عالم (غيّره لو رفعت ملف التريد باسم ثاني)
+local MAIN_PLACE_ID  = 126884695634066   
+local TRADE_PLACE_ID = 129954712878723   
+
+
 local SCRIPT_BY_PLACE = {
     [MAIN_PLACE_ID]  = "full_stage_4.lua",
     [TRADE_PLACE_ID] = "bootha.lua",
@@ -31,7 +31,7 @@ local success, err = pcall(function()
         ShowCustomCursor = false
     })
 
-    -- اختيار السكربت حسب العالم، وإذا العالم غير معروف يشغّل الرئيسي
+    
     local fileName = SCRIPT_BY_PLACE[game.PlaceId] or SCRIPT_BY_PLACE[MAIN_PLACE_ID]
     print("[Loader] PlaceId:", game.PlaceId, "->", fileName)
 
